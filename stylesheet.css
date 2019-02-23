@@ -5,16 +5,27 @@
     font-size: 30pt;
 }
 
+a {
+  text-decoration: none;
+}
+
 #pageone {
   background-image: url('images/pig.png');
-  background-color: rgba(255, 255, 255, 0.5);
   background-position: center;
-  background-size: auto;
+  background-size: 30%;
+  background-repeat: no-repeat;
+}
+
+#pagetwo {
+  background-image: url('images/pig_trrr.png');
+  background-position: center;
+  background-size: 30%;
   background-repeat: no-repeat;
 }
 
 h1 {
-  font-size: 45pt;
+  font-size: 60pt;
   text-align: center;
   color: rgb(102, 8, 116);
+  height: 150pt;
 }
