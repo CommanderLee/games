@@ -5,6 +5,10 @@ var GameStatus = {
     END: 4,
 };
 
+window.onload = function() {
+    console.log('Page loaded');
+};
+
 $(document).ready(function()
 {
     console.log("init-words");

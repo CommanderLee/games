@@ -4,6 +4,9 @@ var GameStatus = {
     RUNNING: 3,
     END: 4,
 };
+window.onload = function() {
+    console.log('Page loaded');
+};
 
 $(document).ready(function()
 {

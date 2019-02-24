@@ -1,3 +1,7 @@
+window.onload = function() {
+    console.log('Page loaded');
+};
+
 $(document).ready(function()
 {
     console.log("init-main");
