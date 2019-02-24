@@ -4,8 +4,13 @@ var GameStatus = {
     RUNNING: 3,
     END: 4,
 };
+
+function GoBack() {
+    top.location.href = "index.html";
+}
+
 window.onload = function() {
-    console.log('Page loaded');
+    // console.log('Page loaded');
 };
 
 $(document).ready(function()

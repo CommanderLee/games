@@ -7,8 +7,6 @@
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="javascripts/script.js"></script>
-    <script src="javascripts/script_words.js"></script>
-    <script src="javascripts/script_songs.js"></script>
 </head>
 <body>
     <div data-role="page" id="pageone">
@@ -16,11 +14,15 @@
             <h2 id="title">2019南安省清华校友会春晚抽奖游戏环节</h2>
             <div id="menu">
                 <ul data-role="listview" class="ul_menu" id="table_of_content">
-                    <li><a id="words" class="anchor" href="words.html" aria-hidden="true">A: 你来表演我来猜</a></li>
+                    <!-- <li><a id="words" class="anchor" top.location.href="words.html" aria-hidden="true">A: 你来表演我来猜</a></li> -->
+                    <li><a id="words" onclick="OpenWords()">A: 你来表演我来猜</a></li>
 
                     <li><a id="sports" class="anchor" href="sports.html" aria-hidden="true">B: 乒乒乓乓</a></li>
 
-                    <li><a id="songs" class="anchor" href="songs.html" aria-hidden="true">C: 我爱记歌词</a></li>
+                    <!-- <li><a id="songs" class="anchor" href="songs.html" aria-hidden="true">C: 我爱记歌词</a></li> -->
+                    <li><a id="songs" onclick="OpenSongs()">C: 我爱记歌词</a></li>
+
+                    <!-- <li><a id="test" onclick="OpenWord()">DD</a></li> -->
                 </ul>
             </div>
 <!--
