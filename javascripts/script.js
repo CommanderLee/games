@@ -12,3 +12,8 @@ function OpenSongs()
 {
     top.location.href = "songs.html";
 }
+
+function OpenSports()
+{
+    top.location.href = "sports.html";
+}

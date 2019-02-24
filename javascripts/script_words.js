@@ -176,8 +176,7 @@ function GameStart()
 
 function InitEachGroup()
 {
-    // Debug; should be 90
-    currTimer = 150;
+    currTimer = 180;
     wordID = -1;
     corrCnt = 0;
     passCnt = 0;
