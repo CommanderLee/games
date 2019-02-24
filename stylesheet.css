@@ -11,14 +11,14 @@ a {
 
 #pageone {
   background-image: url('images/pig.png');
-  background-position: center;
+  background-position: bottom;
   background-size: 30%;
   background-repeat: no-repeat;
 }
 
 #pagetwo {
   background-image: url('images/pig_trrr.png');
-  background-position: center;
+  background-position: bottom;
   background-size: 30%;
   background-repeat: no-repeat;
 }
