@@ -7,6 +7,8 @@ var GameStatus = {
 
 $(document).ready(function()
 {
+    console.log("init-words");
+
     Init();
 
     document.addEventListener('keydown', (event) => {

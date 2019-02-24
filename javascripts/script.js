@@ -1,5 +1,7 @@
 $(document).ready(function()
 {
+    console.log("init-main");
+
     Init();
 
     $('#title').click(function(e)

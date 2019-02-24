@@ -7,6 +7,7 @@ var GameStatus = {
 
 $(document).ready(function()
 {
+    console.log("init-songs");
     Init();
 
     document.addEventListener('keydown', (event) => {
