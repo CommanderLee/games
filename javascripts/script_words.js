@@ -81,55 +81,19 @@ $(document).ready(function()
 
         switch (keyName) {
             case 'Enter':
-                if (currStatus == GameStatus.DESC) {
-                    // Start Game: DESC -> READY
-                    GameStart();
-                }
-                else if (currStatus == GameStatus.READY) {
-                    // Ready -> game start
-                    currStatus = GameStatus.RUNNING;
-                    // First word init (from -1)
-                    NextWord();
-                    // Start timer.
-                    runTimer();
-                }
-                else if (currStatus == GameStatus.RUNNING) {
-                    // Next word. Log successful word.
-                    corrCnt += 1;
-                    NextWord();
-                }
+                Continue();
                 break;
             case 'Escape':
-                // resume the status from runout / timeout
-                if (currGroup < groupNum - 1) {
-                    // Log the groupScores
-                    groupScores[currGroup] = corrCnt;
-
-                    currGroup += 1;
-                    InitEachGroup();
-                    return;
-                }
-                else {
-                    groupScores[currGroup] = corrCnt;
-
-                    // END
-                    $('#curr_word').html("游戏结束");
-                    $('#word_no').html(`1 ~ ${currGroup + 1}号队伍得分: ` + groupScores.join());
-                    $('#curr_song').html("");
-                }
+                Return();
                 break;
             default:
-                // any other character during the game
-                if (currStatus == GameStatus.RUNNING) {
-                    passCnt += 1;
-                    NextWord();
-                }
+                Pass();
                 break;
         }
     });
 });
 
-function  NextWord()
+function NextWord()
 {
     // Update team score info and display the next word
     $('#team_info').html(`${currGroup + 1}号队伍: 正确 (${corrCnt}), 跳过 (${passCnt})`);
@@ -143,6 +107,54 @@ function  NextWord()
         $('#curr_word').html(`词库用完啦！<br>${currGroup + 1}号队伍：${corrCnt}分`);
         // runout = true;
         currStatus = GameStatus.END;
+    }
+}
+
+function Continue() {
+    if (currStatus == GameStatus.DESC) {
+        // Start Game: DESC -> READY
+        GameStart();
+    }
+    else if (currStatus == GameStatus.READY) {
+        // Ready -> game start
+        currStatus = GameStatus.RUNNING;
+        // First word init (from -1)
+        NextWord();
+        // Start timer.
+        runTimer();
+    }
+    else if (currStatus == GameStatus.RUNNING) {
+        // Next word. Log successful word.
+        corrCnt += 1;
+        NextWord();
+    }
+}
+
+function Pass() {
+    // any other character during the game
+    if (currStatus == GameStatus.RUNNING) {
+        passCnt += 1;
+        NextWord();
+    }
+}
+
+function Return() {
+    // resume the status from runout / timeout
+    if (currGroup < groupNum - 1) {
+        // Log the groupScores
+        groupScores[currGroup] = corrCnt;
+
+        currGroup += 1;
+        InitEachGroup();
+        return;
+    }
+    else {
+        groupScores[currGroup] = corrCnt;
+
+        // END
+        $('#curr_word').html("游戏结束");
+        $('#word_no').html(`1 ~ ${currGroup + 1}号队伍得分: ` + groupScores.join());
+        $('#curr_song').html("");
     }
 }
 
